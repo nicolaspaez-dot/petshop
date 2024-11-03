@@ -1,0 +1,36 @@
+#obtener todas las categorias
+GET http://localhost:3000/categorias
+Accept: application/json
+
+###
+
+#obtener una categoria por ID
+GET http://localhost:3000/categorias/1
+Accept: application/json
+
+###
+
+#crear una nueva categoria
+POST http://localhost:3000/categorias
+Content-Type: application/json
+
+{
+    "nombre": "Categoria 1"
+} 
+
+###
+
+#actualizar una categoria existente
+PUT http://localhost:3000/categorias/1
+Content-Type: application/json
+
+{
+    "nombre": "Categoria 1 actualizada"
+} 
+
+###
+
+#eliminar una categoria
+DELETE http://localhost:3000/categorias/1
+Accept: application/json        
+

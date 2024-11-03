@@ -1,0 +1,36 @@
+
+#obtener todos los animales
+GET http://localhost:3000/animales
+Accept: application/json
+
+###
+
+#obtener un animal por ID
+GET http://localhost:3000/animales/1
+Accept: application/json
+
+###
+
+#crear un nuevo animal
+POST http://localhost:3000/animales
+Content-Type: application/json
+
+{
+    "tipo": "Perro"
+} 
+
+###
+
+#actualizar un animal existente
+PUT http://localhost:3000/animales/1
+Content-Type: application/json
+
+{
+    "tipo": "Perro"
+} 
+
+###
+
+#eliminar un animal
+DELETE http://localhost:3000/animales/
+Accept: application/json

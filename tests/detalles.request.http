@@ -1,0 +1,39 @@
+#obtener todos los detalles de pedido
+GET http://localhost:3000/detalles
+Accept: application/json
+
+###
+
+#obtener un detalle de pedido por ID
+GET http://localhost:3000/detalles/1
+Accept: application/json
+
+###
+
+#crear un nuevo detalle de pedido
+POST http://localhost:3000/detalles
+Content-Type: application/json
+
+{
+    "id_pedido": 5,
+    "id_producto": 14,
+    "cantidad": 1
+} 
+
+###
+
+#actualizar un detalle de pedido existente
+PUT http://localhost:3000/detalles/1
+Content-Type: application/json
+
+{
+    "id_pedido": 1,
+    "id_producto": 14,
+    "cantidad": 1
+} 
+
+###
+
+#eliminar un detalle de pedido
+DELETE http://localhost:3000/detalles/1
+Accept: application/json        

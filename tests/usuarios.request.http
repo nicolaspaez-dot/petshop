@@ -1,0 +1,40 @@
+#obtener todos los usuarios
+GET http://localhost:3000/usuarios
+Accept: application/json
+
+###
+
+#obtener un usuario por ID
+GET http://localhost:3000/usuarios/1
+Accept: application/json
+
+###
+
+#crear un nuevo usuario
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+
+    "nombre": "Usuario 1",
+    "email": "usuario1@gmail.com",
+    "password": "123456"
+} 
+
+###
+
+#actualizar un usuario existente
+PUT http://localhost:3000/usuarios/1
+Content-Type: application/json
+
+{
+    "nombre": "Usuario 1 actualizado",
+    "email": "usuario1@gmail.com",
+    "password": "123456"
+} 
+
+###
+
+#eliminar un usuario
+DELETE http://localhost:3000/usuarios/1
+Accept: application/json

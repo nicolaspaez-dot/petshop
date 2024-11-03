@@ -1,0 +1,37 @@
+#obtener todos los pedidos
+GET http://localhost:3000/pedidos
+Accept: application/json
+
+###
+
+#obtener un pedido por ID
+GET http://localhost:3000/pedidos/1
+Accept: application/json
+
+###
+
+#crear un nuevo pedido
+POST http://localhost:3000/pedidos
+Content-Type: application/json
+
+{
+    "id_usuario": 3,
+    "fecha_pedido": "2022-01-01"
+} 
+
+###
+
+#actualizar un pedido existente
+PUT http://localhost:3000/pedidos/1
+Content-Type: application/json
+
+{
+    "id_usuario": 1,
+    "fecha_pedido": "2022-01-01"
+} 
+
+###
+
+#eliminar un pedido
+DELETE http://localhost:3000/pedidos/1
+Accept: application/json
