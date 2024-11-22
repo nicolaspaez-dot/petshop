@@ -1,33 +1,38 @@
-// Importamos los tipos de datos de Sequelize
 import { DataTypes } from 'sequelize';
-// Importamos la conexión a la base de datos
 import sequelize from '../config/db.js';
 
-// Definimos el modelo de la tabla 'Usuario'
 const Usuario = sequelize.define('Usuario', {
     id_usuario: {
         type: DataTypes.INTEGER,
-        primaryKey: true, // Clave primaria
-        autoIncrement: true // Se incrementa automáticamente
+        primaryKey: true,
+        autoIncrement: true,
     },
     nombre: {
         type: DataTypes.STRING,
-        allowNull: false // Campo obligatorio
+        allowNull: false,
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true // No se pueden repetir los emails
+        unique: true,
     },
     password: {
         type: DataTypes.STRING,
-        allowNull: false
-    }
+        allowNull: false,
+    },
+    // Campo para el token de recuperación
+    resetToken: {
+        type: DataTypes.STRING,
+        allowNull: true, // Solo lo usa si hay un proceso de recuperación
+    },
+    // Campo para la fecha de expiración del token
+    resetTokenExpiration: {
+        type: DataTypes.DATE,
+        allowNull: true,
+    },
 }, {
-    tableName: 'usuario', // Nombre de la tabla en la base de datos
-    timestamps: false // No queremos las columnas 'createdAt' y 'updatedAt'
+    tableName: 'usuario',
+    timestamps: false,
 });
 
-// Exportamos el modelo para usarlo en otros archivos
 export default Usuario;
-

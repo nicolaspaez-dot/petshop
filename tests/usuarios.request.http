@@ -16,10 +16,21 @@ Content-Type: application/json
 
 {
 
-    "nombre": "Usuario 1",
-    "email": "usuario1@gmail.com",
-    "password": "123456"
+    "nombre": "brao",
+    "email": "l.cruseno@alumno.etec.um.edu.ar",
+    "password": "nicosith123"
 } 
+
+###
+
+#Iniciar sesión
+POST http://localhost:3000/usuarios/iniciar-sesion
+Content-Type: application/json
+
+{
+    "email": "usuario1@gmail.com",
+    "password": "goku"
+}
 
 ###
 
@@ -36,5 +47,35 @@ Content-Type: application/json
 ###
 
 #eliminar un usuario
-DELETE http://localhost:3000/usuarios/1
+DELETE http://localhost:3000/usuarios/73
 Accept: application/json
+
+###
+
+#eliminar todos los usuarios
+
+DELETE http://localhost:3000/usuarios
+Accept: application/json
+
+###
+
+#recuperar contraseña
+POST http://localhost:3000/usuarios/recuperar
+Content-Type: application/json
+
+{
+    "email": "l.cruseno@alumno.etec.um.edu.ar"
+}
+
+###
+
+# actualizar contraseña
+POST http://localhost:3000/usuarios/cambiar-contrasena
+Content-Type: application/json
+
+{
+    "token": "el_token_recibido_por_email",
+    "nuevaContrasena": "nueva_contraseña_segura"
+}
+
+
